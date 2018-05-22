@@ -34,7 +34,7 @@ class Cart extends Component {
           <div className="title">
             <h4>
               <i className="iconfont icon-superpowers"></i>
-              {cartItemsCount > 0 ? '您的购物车' : '购物车是空的'}
+              {cartItemsCount > 0 ? ' 您的购物车' : ' 购物车是空的'}
             </h4>
           </div>
           {
