@@ -73,11 +73,11 @@ class ManufacturerForm extends Component {
               <i className="iconfont icon-back"></i> 取消
             </button>
             {isEditing ?
-              <button className="button icon" type="submit">
+              <button type="submit" className="button icon" type="submit">
                 <i className="iconfont icon-edit"></i> 修改
               </button>
               :
-              <button className="button icon" type="submit">
+              <button type="submit" className="button icon" type="submit">
                 <i className="iconfont icon-add"></i> 添加
               </button>
             }

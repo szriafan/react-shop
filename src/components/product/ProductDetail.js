@@ -24,10 +24,10 @@ class ProductDetail extends Component {
     const {product, cart, added, count} = this.props
     return (
       <div className="container product-details">
-        <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 product-details-image">
+        <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
           <img className="img-responsive" src={product.image} alt="" />
         </div>
-        <div className="col-lg-8 col-md-8 col-sm-6 col-xs-12 product-details__info">
+        <div className="col-lg-8 col-md-8 col-sm-6 col-xs-12">
           <div className="product-details-description">
             <small>{product.manufacturer && product.manufacturer.name}</small>
             <h4>{product.name}</h4>

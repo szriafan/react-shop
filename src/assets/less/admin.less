@@ -1,5 +1,27 @@
 @import 'variables';
 
+.container {
+  &.admin {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+    &.admin {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+
+  .admin-menu {
+    margin-bottom: 15px;
+  }
+}
+
 .admin-menu {
   a {
     display: block;
@@ -17,19 +39,6 @@
     &.active {
       border-left-width: 8px;
       text-decoration: none;
-    }
-  }
-}
-
-.container {
-  &.admin {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-  @media screen and (max-width: 767px) {
-    &.admin {
-      padding-top: 16px;
-      padding-bottom: 16px;
     }
   }
 }
