@@ -13,7 +13,7 @@ const CartItem = ({product, added, removeCartItem}) => (
       </Link>
     </div>
     <div className="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-      <div class="product-details-description">
+      <div className="product-details-description">
         <h4>{product.name}</h4>
       </div>
       <div className="product-details-price-cart">

@@ -4,8 +4,14 @@ import {connect} from 'react-redux'
 
 import ManufacturerForm from '../../../components/manufacturer/ManufacturerForm'
 import {addManufacturer} from '../../../actions/manufacturer'
+import {endLoad} from '../../../actions/status'
 
 class NewManufacturer extends Component {
+  constructor(props) {
+    super(props)
+    // no need load
+    props.endLoad()
+  }
 
   render() {
     let {addManufacturer} = this.props
@@ -17,4 +23,4 @@ class NewManufacturer extends Component {
   }
 }
 
-export default withRouter(connect(null, {addManufacturer})(NewManufacturer))
+export default withRouter(connect(null, {addManufacturer, endLoad})(NewManufacturer))

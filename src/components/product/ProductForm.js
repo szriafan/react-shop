@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {validate, validateAll} from '../../utils/validate'
 import {toastr} from 'react-redux-toastr'
+import ButtonGroup from '../common/ButtonGroup'
 
 export default class ProductForm extends React.Component {
   constructor(props) {
@@ -153,21 +154,7 @@ export default class ProductForm extends React.Component {
             <span className="small text-danger">描述不能为空且字数不能少于10</span>
             }
           </div>
-          <div className="form-group pull-right">
-            <button type="button" className="button icon grey"
-              onClick={this.goBack}>
-              <i className="iconfont icon-back"></i> 取消
-            </button>
-            {isEditing ?
-              <button type="submit" className="button icon" type="submit">
-                <i className="iconfont icon-edit"></i> 修改
-              </button>
-              :
-              <button type="submit" className="button icon" type="submit">
-                <i className="iconfont icon-add"></i> 添加
-              </button>
-            }
-          </div>
+          <ButtonGroup isEditing={isEditing}/>
         </div>
 
       </form>

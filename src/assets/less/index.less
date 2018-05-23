@@ -23,31 +23,28 @@ a:hover {
 }
 
 .button {
-  background: @red;
+  min-width: 80px;
+  background-color: @red;
   border: 1px solid @red-dark;
   border-radius: 3px;
-  padding: 10px 16px;
+  padding: 8px 12px;
   text-transform: uppercase;
   color: #fff;
   transition: all 200ms ease-out;
   outline: none;
   &:hover {
-    background: @red-light;
+    background-color: @red-light;
   }
   &[disabled] {
-    background: @red;
+    background-color: @red;
     opacity: 0.6;
     cursor: default;
   }
-  &.icon {
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
   &.grey {
-    border: 1px solid @grey-dark;
-    background: @grey-black;
+    border: 1px solid @grey-black;
+    background-color: @grey-black;
     &:hover {
-      background: @grey;
+      background-color: @grey-dark;
     }
   }
 }
@@ -58,11 +55,7 @@ a:hover {
 
 @media screen and (max-width: 767px) {
   .button {
-    padding: 6px 10px;
-  }
-  &.icon {
-    padding-top: 2px;
-    padding-bottom: 2px;
+    min-width: 60px;
   }
 }
 
@@ -100,3 +93,8 @@ a:hover {
     font-size: 18px;
   }
 }
+
+.icon-remove-circle, .icon-add-circle, .icon-delete {
+  cursor: pointer;
+}
+

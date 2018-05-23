@@ -4,6 +4,57 @@
   &.admin {
     padding-top: 30px;
     padding-bottom: 30px;
+    .admin-manufacturers {
+      th {
+        &:first-child {
+          width: 90%
+        }
+        &:last-child {
+          text-align: center;
+        }
+        a {
+          cursor: pointer;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        th:first-child {
+          width: 80%
+        }
+      }
+    }
+
+    .admin-products {
+      .name {
+        width: 40%;
+      }
+      .price {
+        width: 15%;
+      }
+      .inventory {
+        width: 15%;
+      }
+      .manufacturer {
+        width: 20%;
+      }
+      @media screen and (max-width: 767px) {
+        .price {
+          width: 18%;
+        }
+
+        .inventory {
+          width: 18%;
+        }
+      }
+      td:last-child {
+        text-align: right;
+      }
+    }
+
+    .button {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
   }
 }
 
@@ -40,53 +91,6 @@
       border-left-width: 8px;
       text-decoration: none;
     }
-  }
-}
-
-.admin-manufacturers {
-  th {
-    &:first-child {
-      width: 90%
-    }
-    &:last-child {
-      text-align: center;
-    }
-    a {
-      cursor: pointer;
-    }
-  }
-
-  @media screen and (max-width: 767px) {
-    th:first-child {
-      width: 80%
-    }
-  }
-}
-
-.admin-products {
-  .name {
-    width: 40%;
-  }
-  .price {
-    width: 15%;
-  }
-  .inventory {
-    width: 15%;
-  }
-  .manufacturer {
-    width: 20%;
-  }
-  @media screen and (max-width: 767px) {
-    .price {
-      width: 18%;
-    }
-
-    .inventory {
-      width: 18%;
-    }
-  }
-  td:last-child {
-    text-align: right;
   }
 }
 

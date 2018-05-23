@@ -55,7 +55,7 @@ class Cart extends Component {
             <div className="price-sum">
               总价：<em>{currency(priceSum)}</em>
             </div>
-            <button className="button go-pay-button" onClick={this.goPay}> 去结算</button>
+            <button className="button go-pay-button" onClick={this.goPay}>去结算</button>
           </div>
           }
         </div>

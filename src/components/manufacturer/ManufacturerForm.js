@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {toastr} from 'react-redux-toastr'
 
 import {validate, validateAll} from '../../utils/validate'
+import ButtonGroup from '../common/ButtonGroup'
 
 class ManufacturerForm extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class ManufacturerForm extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const {model} = this.props;
-    if(prevProps.model.name !== model.name) {
+    if (prevProps.model.name !== model.name) {
       this.setState({name: model.name})
     }
   }
@@ -47,10 +48,6 @@ class ManufacturerForm extends Component {
     }
   }
 
-  goBack() {
-    history.back()
-  }
-
   render() {
     const {isEditing} = this.props;
     const {name_$error_required} = this.state;
@@ -66,22 +63,7 @@ class ManufacturerForm extends Component {
             <span className="small text-danger">品牌名不能为空</span>
             }
           </div>
-
-          <div className="form-group pull-right">
-            <button type="button" className="button icon grey"
-              onClick={this.goBack}>
-              <i className="iconfont icon-back"></i> 取消
-            </button>
-            {isEditing ?
-              <button type="submit" className="button icon" type="submit">
-                <i className="iconfont icon-edit"></i> 修改
-              </button>
-              :
-              <button type="submit" className="button icon" type="submit">
-                <i className="iconfont icon-add"></i> 添加
-              </button>
-            }
-          </div>
+          <ButtonGroup isEditing={isEditing}/>
         </div>
       </form>
     );

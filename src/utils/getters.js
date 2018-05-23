@@ -1,37 +1,4 @@
 /**
- * locally find Product by ID
- * @param state
- * @param getters
- * @returns {Function}
- */
-export const productById = (state, id) => {
-  console.log(state)
-  const items = state.product.items
-  if (items.length > 1) {
-    return items.find(p => p._id === id)
-  } else {
-
-    return state.product.item
-  }
-}
-
-/**
- * locally find manufacturer By ID
- * @param state
- * @param getters
- * @returns {Function}
- */
-
-export const manufacturerById = state => id => {
-  const items = state.manufacturer.items
-  if (items.length > 0) {
-    return items.find(p => p._id === id)
-  } else {
-    return state.manufacturer.item
-  }
-}
-
-/**
  * get Cart Items Count
  * @param state
  * @returns {number}
@@ -50,7 +17,7 @@ export const getCartItemsCount = state => {
  */
 export const getCartPriceSum = state =>
   state.cart.items.reduce((total, item) =>
-    total + item.price * item.quantity,
+    total + parseFloat(item.price) * parseInt(item.quantity),
     0
   )
 
@@ -63,7 +30,7 @@ export const getCartPriceSum = state =>
 export const getAddedQuantity =  (cart, id) => {
   const item = cart.find(p => p._id === id)
   if (item) {
-    return item.quantity
+    return parseInt(item.quantity)
   } else {
     return 0
   }
