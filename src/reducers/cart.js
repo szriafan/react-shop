@@ -50,7 +50,7 @@ export default function cart(state = initialState, action) {
       // Called when removing one item from cart
       const index = state.items.findIndex(p => p._id === action.id)
       state.items.splice(index, 1);
-      // localStorage.setItem('CART', JSON.stringify(state.items));
+      localStorage.setItem('CART', JSON.stringify(state.items));
       return {
         ...state,
       }
