@@ -5,7 +5,8 @@ import {toastr} from "react-redux-toastr";
 
 // axios gloable setting
 axios.defaults.timeout = 20000
-axios.defaults.baseURL = 'http://localhost:4000/v1'
+axios.defaults.baseURL =
+  process.env.NODE_ENV === 'development' ? 'http://localhost:3000/v1' : 'https://riafan-api.herokuapp.com/v1'
 
 // http response interceptor
 axios.interceptors.response.use(data => {
