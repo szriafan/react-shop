@@ -5,7 +5,7 @@
 ## Live demo:
 [Demo](http://riafan.com/demo/vue-shop)
 
-## Clone and run Service: [https://github.com/szriafan/vue-shop-api.git](https://github.com/szriafan/vue-shop-api.git)
+## Clone and run Service: [https://github.com/51fe/vue-shop-api.git](https://github.com/szriafan/vue-shop-api.git)
 
 ## Build Setup
 
