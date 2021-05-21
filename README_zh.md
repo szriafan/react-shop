@@ -5,7 +5,7 @@
 ## 效果演示:
 [演示](http://riafan.com/demo/vue-shop)
 
-## 下载后端代码并运行 [https://github.com/szriafan/vue-shop-api.git](https://github.com/szriafan/vue-shop-api.git)
+## 下载后端代码并运行 [https://github.com/51fe/vue-shop-api.git](https://github.com/szriafan/vue-shop-api.git)
 
 
 ## 运行
