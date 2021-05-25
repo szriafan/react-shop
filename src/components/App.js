@@ -45,7 +45,7 @@ class App extends Component {
               <Route path="/cart" component={Cart} />
               <Redirect to="/"/>
             </Switch>
-            {status.code == -1 &&
+            {status.code === -1 &&
             <Loading/>
             }
           </div>

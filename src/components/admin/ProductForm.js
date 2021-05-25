@@ -24,11 +24,8 @@ class ProductForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     props.getAllManufacturers();
-  }
-
-  componentDidMount() {
     // reset manufacturer due to select value doesn't support object
-    const { isEditing, manufacturers, model } = this.props;
+    const { isEditing, manufacturers, model } = props;
     if (isEditing && model.manufacturer) {
       this.setState({ manufacturer: model.manufacturer._id })
     }

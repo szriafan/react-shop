@@ -9,10 +9,7 @@ class ManufacturerList extends Component {
 
   constructor(props) {
     super(props)
-  }
-
-  componentDidMount() {
-    this.props.getAllManufacturers()
+    props.getAllManufacturers()
   }
 
   deleteManufacturer(id) {
