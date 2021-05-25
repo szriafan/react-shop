@@ -1,9 +1,9 @@
 # React Shop [English Doc](https://github.com/51fe/react-shop/blob/master/README.md)
 
-> MongoDB + Express + React + Node.js + Redux + React-Router  [电商实战项目](http://riafan.com/react-shop) 。如果您喜欢本项目, 欢迎点赞，谢谢！
+> MongoDB + Express + React + Node.js + Redux + React Router [电商实战项目](http://riafan.com/react-shop) 。如果您喜欢本项目, 欢迎点赞，谢谢！
 
 ## 效果演示:
-[演示](http://riafan.com/demo/vue-shop)
+[演示](http://riafan.com/demo/react-shop)
 
 ## 下载后端代码并运行[服务](https://github.com/51fe/shop-api.git)
 
