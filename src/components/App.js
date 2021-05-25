@@ -1,14 +1,14 @@
-import React, {Component} from 'react'
-import {HashRouter as Router, NavLink, Redirect, Route, Switch} from 'react-router-dom'
-import {connect} from 'react-redux'
-import ReduxToastr from 'react-redux-toastr'
+import React, { Component, Fragment } from 'react';
+import { HashRouter as Router, NavLink, Redirect, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import ReduxToastr from 'react-redux-toastr';
 
-import Home from "./containers/Home"
-import Admin from "./containers/admin/Index"
-import Cart from "./containers/Cart"
-import Detail from './containers/Detail'
-import Loading from './components/common/Loading'
-import {getCartItemsCount} from "./utils/getters";
+import Home from './Home';
+import Admin from './admin';
+import Cart from './Cart';
+import Detail from './Detail';
+import Loading from './Loading';
+import { getCartItemsCount } from '../utils';
 
 class App extends Component {
   constructor(props) {
@@ -16,15 +16,15 @@ class App extends Component {
   }
 
   render() {
-    const {status, cartItemsCount} = this.props
+    const { status, cartItemsCount, location } = this.props
     return (
       <Router>
-        <div>
+        <Fragment>
           <nav>
             <div className="container">
               <ul className="nav-left">
                 <li>
-                  <NavLink exact to="/products"><i className="iconfont icon-home"></i> 首页</NavLink>
+                  <NavLink exact to="/"><i className="iconfont icon-home"></i> 首页</NavLink>
                 </li>
                 <li>
                   <NavLink to="/admin"><i className="iconfont icon-admin"></i> 管理</NavLink>
@@ -38,17 +38,15 @@ class App extends Component {
             </div>
           </nav>
           <div className="main-view">
-            <div className={status.code == 1 ? '' : 'hidden'}>
-              <Switch>
-                <Route exact path="/products" component={Home}></Route>
-                <Route path="/admin" component={Admin}/>
-                <Route path="/products/:id" component={Detail} />
-                <Route path="/cart" component={Cart}/>
-                <Redirect to="/products"/>
-              </Switch>
-            </div>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/admin" component={Admin} />
+              <Route path="/products/:id" component={Detail} />
+              <Route path="/cart" component={Cart} />
+              <Redirect to="/"/>
+            </Switch>
             {status.code == -1 &&
-            <Loading />
+            <Loading/>
             }
           </div>
           <ReduxToastr
@@ -58,8 +56,8 @@ class App extends Component {
             position="top-right"
             transitionIn="fadeIn"
             transitionOut="fadeOut"
-            progressBar />
-        </div>
+            progressBar/>
+        </Fragment>
       </Router>
     )
   }

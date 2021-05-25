@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import { updateCartItem, willUpdateItem } from '../../actions/cart'
-import '../../assets/less/cart-control.less'
+import { updateCartItem, willUpdateItem } from '../actions/cart'
+import '../styles/cart-control.less'
 
 class CartControl extends Component {
   constructor(props) {
@@ -18,12 +18,11 @@ class CartControl extends Component {
 
   static propTypes = {
     product: PropTypes.object.isRequired,
-    added: PropTypes.number.isRequired,
+    added: PropTypes.number, // 已添加
     needConfirmed: PropTypes.bool
   }
 
-  increment(e) {
-    e.preventDefault()
+  increment() {
     const { product, needConfirmed, added } = this.props
     let count = this.state.count;
     let max = count
@@ -36,8 +35,7 @@ class CartControl extends Component {
     }
   }
 
-  decrement(e) {
-    e.preventDefault()
+  decrement() {
     let count = this.state.count;
     if (count > 1) {
       this.setState({ count: --count });

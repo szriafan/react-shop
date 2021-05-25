@@ -1,7 +1,5 @@
 import axios from 'axios'
-import store  from '../store'
-import * as types from '../constants'
-import {toastr} from "react-redux-toastr";
+import { toastr } from "react-redux-toastr";
 
 // axios gloable setting
 axios.defaults.timeout = 20000
@@ -12,9 +10,8 @@ axios.defaults.baseURL =
 axios.interceptors.response.use(data => {
   return data
 }, error => {
-  console.log(error);
-  toastr.error('消息', error.toString())
-  store.dispatch({type: types.ERROR})
+  const msg = error.toString()
+  toastr.error('消息', msg)
   return Promise.reject(error)
 })
 

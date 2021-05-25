@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import CartControl from './CartControl'
-import currency from '../../utils/currency'
+import currency from '../utils/currency'
 
 const CartItem = ({product, added, removeCartItem}) => (
   <div className="container product-details">
@@ -18,7 +18,7 @@ const CartItem = ({product, added, removeCartItem}) => (
       </div>
       <div className="product-details-price-cart">
         <div>{currency(product.price)}</div>
-        <CartControl product={product} added={added}></CartControl>
+        <CartControl product={product}></CartControl>
         <div>{currency(product.price * product.quantity)}</div>
         <span className="iconfont icon-delete" title="移除" onClick={removeCartItem}></span>
       </div>
@@ -28,7 +28,7 @@ const CartItem = ({product, added, removeCartItem}) => (
 
 CartItem.propTypes = {
   product: PropTypes.object.isRequired,
-  added: PropTypes.number.isRequired,
+  added: PropTypes.number,
   removeCartItem: PropTypes.func.isRequired
 }
 

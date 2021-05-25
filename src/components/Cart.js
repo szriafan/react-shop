@@ -1,15 +1,15 @@
-import React, {Component} from 'react'
-import {withRouter} from 'react-router-dom'
-import {connect} from 'react-redux'
-import {toastr} from 'react-redux-toastr'
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { toastr } from 'react-redux-toastr';
+import axois from "../actions/axois";
+import currency from '../utils/currency';
+import CartItem from './CartItem';
+import { getCartItemsCount, getCartPriceSum } from '../utils';
+import { removeCartItem } from '../actions/cart';
+import { endLoad } from '../actions/status';
 
-import currency from '../utils/currency'
-import CartItem from '../components/cart/CartItem'
-import {getAddedQuantity, getCartItemsCount, getCartPriceSum} from '../utils/getters';
-import {removeCartItem} from '../actions/cart';
-import {endLoad} from '../actions/status';
-
-import '../assets/less/cart.less'
+import '../styles/cart.less'
 
 class Cart extends Component {
   constructor(props) {
@@ -20,6 +20,14 @@ class Cart extends Component {
   }
 
   goPay() {
+    const { cart, removeCartItem } = this.props
+    cart.forEach(async item => {
+      await axois.put(`products/${item._id}`, {
+        ...item,
+        inventory: item.inventory - item.quantity
+      })
+      removeCartItem(item)
+    })
     toastr.confirm('功能有待添加', {
       okText: '确认',
       disableCancel: true,
@@ -27,7 +35,7 @@ class Cart extends Component {
   }
 
   render() {
-    const {cart, cartItemsCount, priceSum, removeCartItem} = this.props
+    const { cart, cartItemsCount, priceSum, removeCartItem } = this.props
     return (
       <div className="wrap">
         <div className="cart-wrap">
@@ -38,11 +46,13 @@ class Cart extends Component {
             </h4>
           </div>
           {
-            cart.map(p =>
-              <CartItem product={p} key={p._id}
-                added={getAddedQuantity(cart, p._id)}
-                removeCartItem={() => removeCartItem(p)}>
-              </CartItem>)
+            cart.map(item =>
+              <CartItem
+                product={item}
+                key={item._id}
+                removeCartItem={() => removeCartItem(item)}
+              />
+            )
           }
         </div>
 
@@ -73,4 +83,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, {removeCartItem, endLoad})(Cart))
+export default withRouter(connect(mapStateToProps, { removeCartItem, endLoad })(Cart))

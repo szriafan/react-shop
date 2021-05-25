@@ -1,4 +1,6 @@
-@import '../../assets/less/variables';
+@import 'variables';
+@import 'mixin';
+
 .wrap {
   overflow-y: hidden;
 }
@@ -10,6 +12,7 @@
   bottom: 64px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  .scrollBar;
 }
 .cart-floatbar {
   position: fixed;

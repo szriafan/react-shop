@@ -1,11 +1,11 @@
-# React Shop（[中文说明](https://github.com/szriafan/react-shop/blob/master/README_zh.md)）
+# React Shop [中文说明](https://github.com/51fe/react-shop/blob/master/README_zh.md)
 
-> A project for learning React + Redux + React-Router. If you like the project, please star me, thanks!
+> [A Shopping project](http://riafan.com/react-shop) with MongoDB + Express + React + Node.js + Redux + React-Router. If you like the project, please star me, thanks!
 
 ## Live demo:
 [Demo](http://riafan.com/demo/vue-shop)
 
-## Clone and run Service: [https://github.com/51fe/vue-shop-api.git](https://github.com/szriafan/vue-shop-api.git)
+## Clone and run [Service](https://github.com/51fe/shop-api):
 
 ## Build Setup
 

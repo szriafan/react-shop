@@ -23,16 +23,20 @@ export const getCartPriceSum = state =>
 
 /**
  * get item quantity put in the car
- * @param state
  * @param id
  * @returns {Number}
  */
-export const getAddedQuantity =  (cart, id) => {
-  const item = cart.find(p => p._id === id)
-  if (item) {
-    return parseInt(item.quantity)
-  } else {
+export const getAddedQuantity =  (id) => {
+  try {
+    const cart = JSON.parse(localStorage.getItem('CART')) || []
+    const found = cart.find(item => item._id === id)
+    if (found) {
+      return parseInt(found.quantity)
+    }
+    return 0
+  } catch(err){
     return 0
   }
 }
+
 

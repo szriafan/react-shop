@@ -1,11 +1,11 @@
-# React购物（[English Doc](https://github.com/szriafan/react-shop/blob/master/README.md)）
+# React Shop [English Doc](https://github.com/51fe/react-shop/blob/master/README.md)
 
-> 学习 React + Redux + React-Router的项目。如果您喜欢本项目, 欢迎点赞，谢谢！
+> MongoDB + Express + React + Node.js + Redux + React-Router  [电商实战项目](http://riafan.com/react-shop) 。如果您喜欢本项目, 欢迎点赞，谢谢！
 
 ## 效果演示:
 [演示](http://riafan.com/demo/vue-shop)
 
-## 下载后端代码并运行 [https://github.com/51fe/vue-shop-api.git](https://github.com/szriafan/vue-shop-api.git)
+## 下载后端代码并运行[服务](https://github.com/51fe/shop-api.git)
 
 
 ## 运行

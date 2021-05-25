@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../../assets/less/loading.less'
+import '../styles/loading.less'
 
 const Loading = () => (
   <div className="overlay">
