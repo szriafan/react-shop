@@ -1,22 +1,22 @@
 /**
  * get Cart Items Count
- * @param state
+ * @param items
  * @returns {number}
  */
-export const getCartItemsCount = state => {
+export const getCartItemsCount = items => {
   let total = 0;
-  state.cart.items.forEach(item => {
+  items.forEach(item => {
     total += parseInt(item.quantity);
   });
   return total;
 }
 /**
  * get sum price
- * @param state
+ * @param items
  * @returns {*}
  */
-export const getCartPriceSum = state =>
-  state.cart.items.reduce((total, item) =>
+export const getCartPriceSum = items =>
+  items.reduce((total, item) =>
     total + parseFloat(item.price) * parseInt(item.quantity),
     0
   )

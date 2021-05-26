@@ -11,7 +11,6 @@ class ProductDetail extends Component {
     super(props)
     // reset count state
     willUpdateItem(1)
-    // console.log(props.match.params.id)
     props.getProductById(props.match.params.id)
   }
 
@@ -24,7 +23,7 @@ class ProductDetail extends Component {
   render() {
     const { product, code } = this.props
     const added = getAddedQuantity(product._id)
-    const disabled = getAddedQuantity(product._id) >= product.inventory
+    const disabled = added >= product.inventory
     return (
       code === 1 && <div className="container product-details">
         <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">

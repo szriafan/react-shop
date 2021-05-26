@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   render() {
-    const { status, cartItemsCount, location } = this.props
+    const { items, code } = this.props
     return (
       <Router>
         <Fragment>
@@ -32,7 +32,7 @@ class App extends Component {
               </ul>
               <ul className="nav-right">
                 <li>
-                  <NavLink to="/cart"><i className="iconfont icon-cart"></i> 购物车 ({cartItemsCount})</NavLink>
+                  <NavLink to="/cart"><i className="iconfont icon-cart"></i> 购物车 ({getCartItemsCount(items)})</NavLink>
                 </li>
               </ul>
             </div>
@@ -45,7 +45,7 @@ class App extends Component {
               <Route path="/cart" component={Cart} />
               <Redirect to="/"/>
             </Switch>
-            {status.code === -1 &&
+            {code === -1 &&
             <Loading/>
             }
           </div>
@@ -65,8 +65,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    status: state.status,
-    cartItemsCount: getCartItemsCount(state)
+    code: state.status.code,
+    items: state.cart.items,
   }
 }
 

@@ -35,7 +35,8 @@ class Cart extends Component {
   }
 
   render() {
-    const { cart, cartItemsCount, priceSum, removeCartItem } = this.props
+    const { items, removeCartItem } = this.props
+    const cartItemsCount = getCartItemsCount(items)
     return (
       <div className="wrap">
         <div className="cart-wrap">
@@ -46,7 +47,7 @@ class Cart extends Component {
             </h4>
           </div>
           {
-            cart.map(item =>
+            items.map(item =>
               <CartItem
                 product={item}
                 key={item._id}
@@ -63,7 +64,7 @@ class Cart extends Component {
               <em>{cartItemsCount}</em>件商品
             </div>
             <div className="price-sum">
-              总价：<em>{currency(priceSum)}</em>
+              总价：<em>{currency(getCartPriceSum(items))}</em>
             </div>
             <button className="button go-pay-button" onClick={this.goPay}>去结算</button>
           </div>
@@ -76,10 +77,7 @@ class Cart extends Component {
 
 const mapStateToProps = state => {
   return {
-    ...state.cart,
-    cart: state.cart.items,
-    cartItemsCount: getCartItemsCount(state),
-    priceSum: getCartPriceSum(state)
+    items: state.cart.items
   }
 }
 

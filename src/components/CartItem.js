@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import CartControl from './CartControl'
 import currency from '../utils/currency'
 
-const CartItem = ({product, added, removeCartItem}) => (
+const CartItem = ({product, removeCartItem}) => (
   <div className="container product-details">
     <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
       <Link to={`/products/${product._id}`}>
