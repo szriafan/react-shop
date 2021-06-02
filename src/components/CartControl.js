@@ -73,7 +73,9 @@ class CartControl extends Component {
           onClick={this.decrement}>
           <span className="iconfont icon-remove-circle"></span>
         </div>
-        <input className="cart-count" value={this.state.count}
+        <input
+          value={this.state.count}
+          className="cart-count"
           onChange={this.handleChange} />
         <div className="cart-add" title="加" onClick={this.increment}>
           <span className="iconfont icon-add-circle"></span>

@@ -14,8 +14,8 @@ const initialState =
  */
 const addToCart = (state, data, many = false) => {
   const items = [...state.items]
-  const found = items.find(p => {
-    return p._id === data._id
+  const found = items.find(item => {
+    return item._id === data._id
   })
   const count = many ? state.count : 1
   // add

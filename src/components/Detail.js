@@ -10,7 +10,8 @@ class ProductDetail extends Component {
   constructor(props) {
     super(props)
     // reset count state
-    willUpdateItem(1)
+    props.willUpdateItem(1)
+    // console.log(props.match.params.id)
     props.getProductById(props.match.params.id)
   }
 
@@ -66,7 +67,7 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { getProductById, addCartItems })(ProductDetail)
+export default connect(mapStateToProps, { getProductById, addCartItems, willUpdateItem })(ProductDetail)
 
 
 
