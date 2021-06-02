@@ -1,80 +1,10 @@
 @import 'variables';
 
-.container {
-  &.admin {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    .admin-manufacturers {
-      th {
-        &:first-child {
-          width: 90%
-        }
-        &:last-child {
-          text-align: center;
-        }
-        a {
-          cursor: pointer;
-        }
-      }
+.admin {
+  padding-top: 30px;
+  padding-bottom: 30px;
 
-      @media screen and (max-width: 767px) {
-        th:first-child {
-          width: 80%
-        }
-      }
-    }
-
-    .admin-products {
-      .name {
-        width: 40%;
-      }
-      .price {
-        width: 15%;
-      }
-      .inventory {
-        width: 15%;
-      }
-      .manufacturer {
-        width: 20%;
-      }
-      @media screen and (max-width: 767px) {
-        .price {
-          width: 18%;
-        }
-
-        .inventory {
-          width: 18%;
-        }
-      }
-      td:last-child {
-        text-align: right;
-      }
-    }
-
-    .button {
-      padding-top: 5px;
-      padding-bottom: 5px;
-    }
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .container {
-    padding-left: 0;
-    padding-right: 0;
-    &.admin {
-      padding-top: 15px;
-      padding-bottom: 15px;
-    }
-  }
-
-  .admin-menu {
-    margin-bottom: 15px;
-  }
-}
-
-.admin-menu {
-  a {
+  .admin-menu a {
     display: block;
     border: 1px solid @red-dark;
     padding: 10px 15px;
@@ -87,11 +17,30 @@
       color: @grey-dark;
     }
 
-    &.active {
+    &.router-link-active {
+      border-left-width: 8px;
+      text-decoration: none;
+    }
+
+    &.router-link-exact-active {
       border-left-width: 8px;
       text-decoration: none;
     }
   }
+
+  @media screen and (max-width: 767px) {
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+
+      &.admin {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+    }
+
+    .admin-menu {
+      margin-bottom: 15px;
+    }
+  }
 }
-
-
